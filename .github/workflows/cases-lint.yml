@@ -1,0 +1,29 @@
+name: Case study validation
+
+on:
+  pull_request:
+    paths:
+      - cases/**
+      - scripts/validate_cases.py
+      - .github/workflows/cases-lint.yml
+  push:
+    branches:
+      - main
+    paths:
+      - cases/**
+      - scripts/validate_cases.py
+      - .github/workflows/cases-lint.yml
+
+permissions:
+  contents: read
+
+jobs:
+  validate-cases:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Validate case-study rules
+        run: |
+          python -m py_compile scripts/validate_cases.py
+          python scripts/validate_cases.py --self-test
+          python scripts/validate_cases.py
