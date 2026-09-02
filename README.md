@@ -43,9 +43,10 @@ The Spark-X2.5-4B and Spark-X2.5-1.7B are available on the following platforms. 
 | Modelers | [Spark-X2.5 in Modelers](https://modelers.cn/user/XHToken) | Recommended download source for users with Ascend chips |
 | Ollama | [Spark-X2.5 in Ollama](https://ollama.com/SparkLLM) | Download and run the model locally with Ollama |
 | SCNet | [Spark-X2.5 in SCNet](https://www.scnet.cn/ui/aihub/models/XHToken/Spark-X2.5-4B) | Recommended download source for users with Hygon chips | 
+| AtomGit | [Spark-X2.5 in AtomGit](https://ai.atomgit.com/collections/2095030878254981121) | Recommended download source for users in China |
 <!-- | SourceFind | [Spark-X2.5 in SourceFind](https://developer.sourcefind.cn/modelzoo) | Recommended download source for users with Hygon chips | -->
 
-> If Hugging Face is slow or unavailable in your region, try ModelScope, Modelers or SCNet instead.
+> If Hugging Face is slow or unavailable in your region, try ModelScope, Modelers, SCNet or AtomGit instead.
 
 <!-- > If Hugging Face is slow or unavailable in your region, try ModelScope, Modelers, SCNet, or SourceFind instead. -->
 
