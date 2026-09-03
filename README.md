@@ -107,9 +107,17 @@ The Spark-X2.5-4B and Spark-X2.5-1.7B are available on the following platforms. 
 
 ## Quickstart
 
+The examples below serve a local Spark-X2.5-4B checkpoint. Set `MODEL_PATH` to its absolute path before starting a container:
+
+```bash
+export MODEL_PATH=/absolute/path/to/Spark-X2.5-4B
+```
+
 ### SGLang
 
 #### Install SGLang
+
+##### For NVIDIA GPUs:
 
 Use the pre-built image that tracks the Spark-X2.5 runtime:
 
@@ -117,18 +125,30 @@ Use the pre-built image that tracks the Spark-X2.5 runtime:
 docker pull lmsysorg/sglang:nightly-dev-cu13-20260827-20621aa1
 ```
 
+##### For Ascend NPUs:
+
+```bash
+# A3 daily build
+export SGLANG_IMAGE=quay.io/ascend/sglang:main-cann9.0.0-a3
+
+# A2 daily build (use this instead on A2 hardware)
+export SGLANG_IMAGE=quay.io/ascend/sglang:main-cann9.0.0-910b
+
+docker pull "$SGLANG_IMAGE"
+```
+
 #### Run Inference
 
-The following command can be used to start an OpenAI-compatible API server on a single GPU with maximum context length 1,048,576 tokens.
+The following commands start an OpenAI-compatible API server configured for a maximum context length of 1,048,576 tokens. This setting requires sufficient device memory; reduce `--context-length` when necessary.
 
 #### Server
 
 ```bash
-docker run -it \
+docker run --rm -it \
   --gpus '"device=0"' \
   --ipc=host \
   -p 30000:30000 \
-  -v "$MODEL_PATH":/root/Spark-X2.5-4B \
+  -v "$MODEL_PATH":/root/Spark-X2.5-4B:ro \
   lmsysorg/sglang:nightly-dev-cu13-20260827-20621aa1 \
   python -m sglang.launch_server \
     --model-path /root/Spark-X2.5-4B \
@@ -143,9 +163,42 @@ docker run -it \
     --port 30000
 ```
 
+##### Ascend NPU:
+
+```bash
+docker run -it --rm -e ASCEND_USE_FIA=1 --network=host --ipc=host --shm-size=16g \
+    --device=/dev/davinci0 --device=/dev/davinci1 --device=/dev/davinci2 --device=/dev/davinci3 \
+    --device=/dev/davinci4 --device=/dev/davinci5 --device=/dev/davinci6 --device=/dev/davinci7 \
+    --device=/dev/davinci8 --device=/dev/davinci9 --device=/dev/davinci10 --device=/dev/davinci11 \
+    --device=/dev/davinci12 --device=/dev/davinci13 --device=/dev/davinci14 --device=/dev/davinci15 \
+    --device=/dev/davinci_manager \
+    --device=/dev/devmm_svm \
+    --device=/dev/hisi_hdc \
+    --volume /usr/local/sbin:/usr/local/sbin \
+    --volume /usr/local/Ascend/driver:/usr/local/Ascend/driver \
+    --volume /usr/local/Ascend/firmware:/usr/local/Ascend/firmware \
+    --volume /etc/ascend_install.info:/etc/ascend_install.info \
+    --volume /var/queue_schedule:/var/queue_schedule \
+    --volume ~/.cache/:/root/.cache/ \
+    --volume "$MODEL_PATH:/root/Spark-X2.5-4B:ro" \
+    --entrypoint=python \
+    "$SGLANG_IMAGE" \
+    -m sglang.launch_server \
+      --model-path /root/Spark-X2.5-4B \
+      --served-model-name spark2.5 \
+      --tool-call-parser spark25 \
+      --reasoning-parser qwen3 \
+      --tp-size 1 \
+      --mem-fraction-static 0.8 \
+      --context-length 1048576 \
+      --chat-template /root/Spark-X2.5-4B/chat_template.jinja \
+      --host 0.0.0.0 \
+      --port 30000
+```
+
 #### Client
 
-Thinking is enabled by default by both the chat template and the qwen3 reasoning parser. To disable thinking for a specific request, set "chat_template_kwargs": {"enable_thinking": false}.
+Thinking is enabled by default by both the chat template and the Qwen3 reasoning parser. To disable thinking for a specific request, set `"chat_template_kwargs": {"enable_thinking": false}`.
 
 ```bash
 curl -s http://localhost:30000/v1/chat/completions \
@@ -170,7 +223,115 @@ curl -s http://localhost:30000/v1/chat/completions \
 
 ### vLLM
 
-#### Install vLLM
+#### Deploy vLLM
+
+vLLM provides an official Docker image for NVIDIA GPU deployment:
+
+```bash
+docker run --rm --gpus all \
+  --ipc=host \
+  -p 30000:30000 \
+  -v "$MODEL_PATH:/models/Spark-X2.5-4B:ro" \
+  vllm/vllm-openai:latest \
+  --model /models/Spark-X2.5-4B \
+  --port 30000 \
+  --trust-remote-code \
+  --served-model-name spark25 \
+  --tensor-parallel-size 1 \
+  --gpu-memory-utilization 0.7 \
+  --enable-prefix-caching \
+  --chat-template /models/Spark-X2.5-4B/chat_template.jinja
+```
+
+For Ascend NPUs, choose an official image for the fastest setup.
+
+##### Ascend A2:
+
+```bash
+export IMAGE=quay.io/ascend/vllm-ascend:nightly-main
+docker pull "$IMAGE"
+
+export DEVICE=/dev/davinci0
+export MODEL_CACHE="${HOME}/.cache"
+
+mkdir -p "$MODEL_CACHE"
+
+docker run --rm \
+    --name vllm-ascend \
+    --shm-size=1g \
+    --device "$DEVICE" \
+    --device /dev/davinci_manager \
+    --device /dev/devmm_svm \
+    --device /dev/hisi_hdc \
+    -v /usr/local/dcmi:/usr/local/dcmi \
+    -v /usr/local/bin/npu-smi:/usr/local/bin/npu-smi \
+    -v /usr/local/Ascend/driver/lib64/:/usr/local/Ascend/driver/lib64/ \
+    -v /usr/local/Ascend/driver/version.info:/usr/local/Ascend/driver/version.info \
+    -v /etc/ascend_install.info:/etc/ascend_install.info \
+    -v "$MODEL_CACHE:/root/.cache" \
+    -p 8000:8000 \
+    -it "$IMAGE" bash
+```
+
+##### Ascend A3:
+
+```bash
+export IMAGE=quay.io/ascend/vllm-ascend:nightly-main-a3
+docker pull "$IMAGE"
+
+export DEVICE0=/dev/davinci0
+export DEVICE1=/dev/davinci1
+export MODEL_CACHE="${HOME}/.cache"
+
+mkdir -p "$MODEL_CACHE"
+
+docker run --rm \
+    --name vllm-ascend \
+    --shm-size=1g \
+    --device "$DEVICE0" \
+    --device "$DEVICE1" \
+    --device /dev/davinci_manager \
+    --device /dev/devmm_svm \
+    --device /dev/hisi_hdc \
+    -v /usr/local/dcmi:/usr/local/dcmi \
+    -v /usr/local/bin/npu-smi:/usr/local/bin/npu-smi \
+    -v /usr/local/Ascend/driver/lib64/:/usr/local/Ascend/driver/lib64/ \
+    -v /usr/local/Ascend/driver/version.info:/usr/local/Ascend/driver/version.info \
+    -v /etc/ascend_install.info:/etc/ascend_install.info \
+    -v "$MODEL_CACHE:/root/.cache" \
+    -p 8000:8000 \
+    -it "$IMAGE" bash
+```
+
+##### Ascend 950DT:
+
+```bash
+export IMAGE=quay.io/ascend/vllm-ascend:nightly-main-a5
+docker pull "$IMAGE"
+
+export MODEL_CACHE="${HOME}/.cache"
+
+mkdir -p "$MODEL_CACHE"
+
+docker run --rm \
+    --name vllm-ascend \
+    --net=host \
+    --shm-size=1g \
+    --device /dev/davinci0 \
+    --device /dev/davinci_manager \
+    --device /dev/devmm_svm \
+    --device /dev/hisi_hdc \
+    -v /usr/local/dcmi:/usr/local/dcmi \
+    -v /usr/local/Ascend/driver/tools/hccn_tool:/usr/local/Ascend/driver/tools/hccn_tool \
+    -v /usr/local/bin/npu-smi:/usr/local/bin/npu-smi \
+    -v /usr/local/Ascend/driver/lib64/:/usr/local/Ascend/driver/lib64/ \
+    -v /usr/local/Ascend/driver/version.info:/usr/local/Ascend/driver/version.info \
+    -v /etc/ascend_install.info:/etc/ascend_install.info \
+    -v "$MODEL_CACHE:/root/.cache" \
+    -it "$IMAGE" bash
+```
+
+Install the Spark plugin inside the container:
 
 ```bash
 pip install uv
@@ -184,14 +345,14 @@ uv pip install .
 #### Server
 
 ```bash
-vllm serve "./Spark-X2.5-4B" \
+vllm serve "/models/Spark-X2.5-4B" \
  --port "30000" \
  --trust-remote-code \
  --served-model-name spark25 \
  --tensor-parallel-size 1 \
  --gpu-memory-utilization 0.7 \
  --enable-prefix-caching \
- --chat-template Spark-X2.5-4B/chat_template.jinja
+ --chat-template /models/Spark-X2.5-4B/chat_template.jinja
 ```
 
 #### Client
@@ -222,15 +383,15 @@ source .venv/bin/activate
 
 # Apple silicon
 python -m pip install -e .
-# Linux cpu
+# Linux CPU
 python -m pip install -e '.[cpu]'
-# Linux with cuda12
+# Linux with CUDA 12
 python -m pip install -e '.[cuda12]' 
-# Linux with cuda13
+# Linux with CUDA 13
 python -m pip install -e '.[cuda13]'
 ```
 
-Run Spark-X2.5
+#### Run Inference
 
 ```bash
 spark-mlx-generate \
@@ -257,9 +418,16 @@ cmake --build build --parallel 8
 
 #### Create and Run
 
+Create the model definition, then start the Ollama server in one terminal:
+
 ```bash
 printf 'FROM /absolute/path/to/your.gguf\n' > ./Modelfile.spark
 ./ollama serve
+```
+
+Create and run the model from another terminal:
+
+```
 ./ollama create Spark-X2.5-1.7B -f ./Modelfile.spark
 ./ollama run Spark-X2.5-1.7B
 ```
@@ -303,17 +471,17 @@ Example runtime directory on macOS:
 
 Open My Models, select the Spark-X2.5 model, click Load, then start a new Chat.
 
-#### Run with lms cli
+#### Run with the lms cli
 
 ```bash
-# Replace `<model>` with a model listed by `lms ls`
+# Replace `<model>` with a model listed by `lms ls`.
 lms load <model>
 lms chat <model>
 ```
 
-### Finetuning
+### Fine-Tuning
 
-We advise you to use [Llama-Factory](https://github.com/XHToken/LlamaFactory) to finetune your models.
+We recommend using [Llama-Factory](https://github.com/XHToken/LlamaFactory) to fine-tune the model.
 
 
 ## License
