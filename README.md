@@ -32,6 +32,13 @@ Today, we are introducing Spark-X2.5-4B and Spark-X2.5-1.7B, two compact, genera
   <img src="assets/benchmark.svg" />
 </p>
 
+## Release
+
+- [2026/09/04] 🚀 Released FP8 and INT8 quantized versions of Spark-X2.5-4B and Spark-X2.5-1.7B.
+- [2026/09/03] 🤝 Added deployment support for vLLM and SGLang on Ascend NPU.
+- [2026/09/02] 🚀 Added [AtomGit](https://ai.atomgit.com/collections/2095030878254981121) as a new distribution channel.
+- [2026/09/01] 🚀 Global launch of the Spark-X2.5 model series on [Hugging Face](https://huggingface.co/collections/XHToken/spark-x25), [ModelScope](https://www.modelscope.cn/collections/XHToken/Spark-X25), [Ollama](https://ollama.com/SparkLLM), [Modelers](https://modelers.cn/user/XHToken), and [SCNet](https://www.scnet.cn/ui/aihub/models/XHToken/Spark-X2.5-4B).
+
 ## Model Downloads
 
 The Spark-X2.5-4B and Spark-X2.5-1.7B are available on the following platforms. Choose the most suitable download source for your region and environment:
