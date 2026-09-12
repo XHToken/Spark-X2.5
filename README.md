@@ -34,6 +34,8 @@ Today, we are introducing Spark-X2.5-4B and Spark-X2.5-1.7B, two compact, genera
 
 ## Release
 
+- [2026/09/11] 🚀 Added native support for Spark-X2.5 model in PocketPal AI app, now available on [App Store](https://apps.apple.com/us/app/pocketpal-ai/id6502579498) and [Google Play](https://play.google.com/store/apps/details?id=com.pocketpalai).
+- [2026/09/08] 🤝 Added [LM Studio](https://lmstudio.ai/download) support for Spark-X2.5 model architecture.
 - [2026/09/06] 🤝 Added native model architecture support for Spark‑X2.5 (Spark2_5ForCausalLM) in [llama.cpp](https://github.com/ggml-org/llama.cpp/releases/tag/b10829).
 - [2026/09/04] 🚀 Released FP8 and INT8 quantized versions of Spark-X2.5-4B and Spark-X2.5-1.7B.
 - [2026/09/03] 🤝 Added deployment support for vLLM and SGLang on Ascend NPU.
