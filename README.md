@@ -416,78 +416,30 @@ spark-mlx-generate \
 
 ### Ollama
 
-#### Build
+1. Download and install Ollama from [ollama.com](https://ollama.com/download) (v0.34.1 or later).
+
+2. Run the model:
 
 ```bash
-git clone -b b10828 https://github.com/ggml-org/llama.cpp.git llama.cpp-spark
-git clone https://github.com/ollama/ollama.git ollama-spark
-cd ollama-spark
-export OLLAMA_LLAMA_CPP_SOURCE="$(cd ../llama.cpp-spark && pwd)"
-cmake -S . -B build
-cmake --build build --parallel 8
-```
-
-#### Create and Run
-
-Create the model definition, then start the Ollama server in one terminal:
-
-```bash
-printf 'FROM /absolute/path/to/your.gguf\n' > ./Modelfile.spark
-./ollama serve
-```
-
-Create and run the model from another terminal:
-
-```
-./ollama create Spark-X2.5-1.7B -f ./Modelfile.spark
-./ollama run Spark-X2.5-1.7B
+ollama run SparkLLM/Spark-X2.5-1.7B
 ```
 
 ### LM Studio
 
-#### Build
+1. Download and install LM Studio from [lmstudio.ai](https://lmstudio.ai/download) (0.4.0 or later).
 
-```bash
-git clone -b b10828 https://github.com/ggml-org/llama.cpp.git llama.cpp-spark
-cd llama.cpp-spark
-cmake -S . -B build
-cmake --build build --parallel 8
-```
+2. Search for "Spark-X2.5" in LM Studio and download the model.
 
-#### Set Up LM Studio
-
-1. Close LM Studio.
-
-2. Back up the selected runtime directory:
-
-   ```text
-   <LM_STUDIO_HOME>/extensions/backends/<selected-runtime>/
-   ```
-
-3. Copy the `llama.cpp-spark` build output into the selected runtime directory, overwriting the existing files.
-
-4. Place the GGUF model in the following directory:
-
-   ```text
-   <LM_STUDIO_HOME>/models/<org>/<name>/
-   ```
-
-Example runtime directory on macOS:
-
-```text
-./build/bin/* -> ~/.lmstudio/extensions/backends/llama.cpp-mac-arm64-apple-metal-advsimd-<version>/
-```
-
-#### Run with LM Studio
-
-Open My Models, select the Spark-X2.5 model, click Load, then start a new Chat.
+3. Load the model and start chatting.
 
 #### Run with the lms cli
 
 ```bash
-# Replace `<model>` with a model listed by `lms ls`.
-lms load <model>
-lms chat <model>
+# List available models
+lms ls
+
+# Run chat with Spark-X2.5
+lms chat spark-x2.5
 ```
 
 ### Fine-Tuning
