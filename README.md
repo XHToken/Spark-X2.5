@@ -442,6 +442,13 @@ lms ls
 lms chat spark-x2.5
 ```
 
+### Unsloth
+
+[Download Unsloth Studio](https://unsloth.ai/)
+
+> [!NOTE]
+> The latest Unsloth Studio supports native Spark-X2.5 GGUF inference.
+
 ### Fine-Tuning
 
 We recommend using [Llama-Factory](https://github.com/XHToken/LlamaFactory) to fine-tune the model.
