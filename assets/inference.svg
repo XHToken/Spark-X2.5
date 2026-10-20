@@ -1,0 +1,196 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1080" viewBox="0 0 1440 1080" role="img" aria-labelledby="title desc">
+<title id="title">Spark-X2.6-4B inference speed</title><desc id="desc">Prefill and decode throughput across 4K, 32K, 128K and 256K context lengths. Two separate test groups. Higher is better. Missing measurements are omitted. Test group 2 hardware: Mac M5 Pro, 16-core.</desc>
+<metadata>{&quot;contexts&quot;: [&quot;4K&quot;, &quot;32K&quot;, &quot;128K&quot;, &quot;256K&quot;], &quot;metrics&quot;: [&quot;group1_prefill&quot;, &quot;group1_decode&quot;, &quot;group2_prefill&quot;, &quot;group2_decode&quot;], &quot;values&quot;: [[[14107, 12131, 8274, 5787], [14668, 12543, 7791, null], [18156, 14834, 9078, 5971], [17035, 12821, 6898, 5136]], [[210.54, 172.78, 107.92, 71.93], [179.64, 153.55, 104.3, null], [219.34, 175.67, 104.9, 67.85], [213.52, 184.42, 130.21, 91.42]], [[1630.55, 1125.2, 575.49, 341.46], [1699.55, 1247.68, 672.44, null], [1858.32, 1266.98, 586.9, 343.02], [2369.17, 1742.24, 1006.2, 594.22]], [[65.82, 56.61, 37.87, 25.41], [62.15, 52.69, 34.5, null], [76.14, 62.04, 37.73, 23.43], [86.58, 72.05, 45.81, 27.84]]]}</metadata>
+<rect width="1440" height="1080" fill="#FFFFFF"/>
+<g font-family="Inter,Arial,Helvetica,sans-serif">
+<text x="48" y="54" font-size="30" fill="#253047" font-weight="700" text-anchor="start" >Inference Speed</text>
+<text x="48" y="84" font-size="16" fill="#697489" font-weight="400" text-anchor="start" >Throughput across context lengths</text>
+<text x="1392" y="55" font-size="13" fill="#697489" font-weight="600" text-anchor="end" >TOKENS / SECOND  ↑</text>
+<text x="48" y="134" font-size="20" fill="#253047" font-weight="700" text-anchor="start" >RTX 4090</text>
+<text x="1392" y="134" font-size="14" fill="#697489" font-weight="400" text-anchor="end" >llama.cpp · TensorRT</text>
+<line x1="48" y1="158" x2="74" y2="158" stroke="#3267AA" stroke-width="3" />
+<circle cx="61" cy="158" r="3.5" fill="#3267AA"/>
+<text x="83" y="162" font-size="13" fill="#4F5B70" font-weight="400" text-anchor="start" >Qwen3.5-4B · llama.cpp · Q4_K_M</text>
+<line x1="720" y1="158" x2="746" y2="158" stroke="#9099A5" stroke-width="3" />
+<circle cx="733" cy="158" r="3.5" fill="#9099A5"/>
+<text x="755" y="162" font-size="13" fill="#4F5B70" font-weight="400" text-anchor="start" >Gemma4-E4B · llama.cpp · Q4_K_M</text>
+<line x1="48" y1="183" x2="74" y2="183" stroke="#E55C89" stroke-width="3" />
+<circle cx="61" cy="183" r="3.5" fill="#E55C89"/>
+<text x="83" y="187" font-size="13" fill="#4F5B70" font-weight="600" text-anchor="start" >Spark-X2.6-4B · llama.cpp · Q4_K_M</text>
+<line x1="720" y1="183" x2="746" y2="183" stroke="#AB2858" stroke-width="3" stroke-dasharray="6 4"/>
+<circle cx="733" cy="183" r="3.5" fill="#AB2858"/>
+<text x="755" y="187" font-size="13" fill="#4F5B70" font-weight="600" text-anchor="start" >Spark-X2.6-4B · TensorRT · INT4</text>
+<rect x="48" y="206" width="656" height="324" rx="12" fill="#FAFBFD" stroke="#E8ECF2"/>
+<text x="70" y="238" font-size="18" fill="#253047" font-weight="700" text-anchor="start" >Prefill</text>
+<text x="682" y="238" font-size="12" fill="#798499" font-weight="400" text-anchor="end" >tokens/s</text>
+<line x1="116" y1="473.0" x2="662" y2="473.0" stroke="#E8ECF2" stroke-width="1" />
+<text x="104" y="477.0" font-size="12" fill="#798499" font-weight="400" text-anchor="end" >0</text>
+<line x1="116" y1="432.6" x2="662" y2="432.6" stroke="#E8ECF2" stroke-width="1" />
+<text x="104" y="436.6" font-size="12" fill="#798499" font-weight="400" text-anchor="end" >4k</text>
+<line x1="116" y1="392.2" x2="662" y2="392.2" stroke="#E8ECF2" stroke-width="1" />
+<text x="104" y="396.2" font-size="12" fill="#798499" font-weight="400" text-anchor="end" >8k</text>
+<line x1="116" y1="351.8" x2="662" y2="351.8" stroke="#E8ECF2" stroke-width="1" />
+<text x="104" y="355.8" font-size="12" fill="#798499" font-weight="400" text-anchor="end" >12k</text>
+<line x1="116" y1="311.4" x2="662" y2="311.4" stroke="#E8ECF2" stroke-width="1" />
+<text x="104" y="315.4" font-size="12" fill="#798499" font-weight="400" text-anchor="end" >16k</text>
+<line x1="116" y1="271.0" x2="662" y2="271.0" stroke="#E8ECF2" stroke-width="1" />
+<text x="104" y="275.0" font-size="12" fill="#798499" font-weight="400" text-anchor="end" >20k</text>
+<text x="116.0" y="498" font-size="13" fill="#58647A" font-weight="400" text-anchor="middle" >4K</text>
+<text x="298.0" y="498" font-size="13" fill="#58647A" font-weight="400" text-anchor="middle" >32K</text>
+<text x="480.0" y="498" font-size="13" fill="#58647A" font-weight="400" text-anchor="middle" >128K</text>
+<text x="662.0" y="498" font-size="13" fill="#58647A" font-weight="400" text-anchor="middle" >256K</text>
+<text x="389.0" y="518" font-size="12" fill="#798499" font-weight="400" text-anchor="middle" >Context length</text>
+<polyline points="116.00,330.52 298.00,350.48 480.00,389.43 662.00,414.55" fill="none" stroke="#3267AA" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="116.00" cy="330.52" r="4.5" fill="white" stroke="#3267AA" stroke-width="2.2"><title>Qwen3.5-4B · llama.cpp · Q4_K_M | 4K | 14,107 tokens/s</title></circle>
+<circle cx="298.00" cy="350.48" r="4.5" fill="white" stroke="#3267AA" stroke-width="2.2"><title>Qwen3.5-4B · llama.cpp · Q4_K_M | 32K | 12,131 tokens/s</title></circle>
+<circle cx="480.00" cy="389.43" r="4.5" fill="white" stroke="#3267AA" stroke-width="2.2"><title>Qwen3.5-4B · llama.cpp · Q4_K_M | 128K | 8,274 tokens/s</title></circle>
+<circle cx="662.00" cy="414.55" r="4.5" fill="white" stroke="#3267AA" stroke-width="2.2"><title>Qwen3.5-4B · llama.cpp · Q4_K_M | 256K | 5,787 tokens/s</title></circle>
+<polyline points="116.00,324.85 298.00,346.32 480.00,394.31" fill="none" stroke="#9099A5" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="116.00" cy="324.85" r="4.5" fill="white" stroke="#9099A5" stroke-width="2.2"><title>Gemma4-E4B · llama.cpp · Q4_K_M | 4K | 14,668 tokens/s</title></circle>
+<circle cx="298.00" cy="346.32" r="4.5" fill="white" stroke="#9099A5" stroke-width="2.2"><title>Gemma4-E4B · llama.cpp · Q4_K_M | 32K | 12,543 tokens/s</title></circle>
+<circle cx="480.00" cy="394.31" r="4.5" fill="white" stroke="#9099A5" stroke-width="2.2"><title>Gemma4-E4B · llama.cpp · Q4_K_M | 128K | 7,791 tokens/s</title></circle>
+<polyline points="116.00,289.62 298.00,323.18 480.00,381.31 662.00,412.69" fill="none" stroke="#E55C89" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="116.00" cy="289.62" r="4.5" fill="white" stroke="#E55C89" stroke-width="2.2"><title>Spark-X2.6-4B · llama.cpp · Q4_K_M | 4K | 18,156 tokens/s</title></circle>
+<circle cx="298.00" cy="323.18" r="4.5" fill="white" stroke="#E55C89" stroke-width="2.2"><title>Spark-X2.6-4B · llama.cpp · Q4_K_M | 32K | 14,834 tokens/s</title></circle>
+<circle cx="480.00" cy="381.31" r="4.5" fill="white" stroke="#E55C89" stroke-width="2.2"><title>Spark-X2.6-4B · llama.cpp · Q4_K_M | 128K | 9,078 tokens/s</title></circle>
+<circle cx="662.00" cy="412.69" r="4.5" fill="white" stroke="#E55C89" stroke-width="2.2"><title>Spark-X2.6-4B · llama.cpp · Q4_K_M | 256K | 5,971 tokens/s</title></circle>
+<polyline points="116.00,300.95 298.00,343.51 480.00,403.33 662.00,421.13" fill="none" stroke="#AB2858" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="7 5"/>
+<rect x="112.00" y="296.95" width="8" height="8" rx="1" fill="#AB2858" stroke="white" stroke-width="1"><title>Spark-X2.6-4B · TensorRT · INT4 | 4K | 17,035 tokens/s</title></rect>
+<rect x="294.00" y="339.51" width="8" height="8" rx="1" fill="#AB2858" stroke="white" stroke-width="1"><title>Spark-X2.6-4B · TensorRT · INT4 | 32K | 12,821 tokens/s</title></rect>
+<rect x="476.00" y="399.33" width="8" height="8" rx="1" fill="#AB2858" stroke="white" stroke-width="1"><title>Spark-X2.6-4B · TensorRT · INT4 | 128K | 6,898 tokens/s</title></rect>
+<rect x="658.00" y="417.13" width="8" height="8" rx="1" fill="#AB2858" stroke="white" stroke-width="1"><title>Spark-X2.6-4B · TensorRT · INT4 | 256K | 5,136 tokens/s</title></rect>
+<rect x="736" y="206" width="656" height="324" rx="12" fill="#FAFBFD" stroke="#E8ECF2"/>
+<text x="758" y="238" font-size="18" fill="#253047" font-weight="700" text-anchor="start" >Decode</text>
+<text x="1370" y="238" font-size="12" fill="#798499" font-weight="400" text-anchor="end" >tokens/s</text>
+<line x1="804" y1="473.0" x2="1350" y2="473.0" stroke="#E8ECF2" stroke-width="1" />
+<text x="792" y="477.0" font-size="12" fill="#798499" font-weight="400" text-anchor="end" >0</text>
+<line x1="804" y1="432.6" x2="1350" y2="432.6" stroke="#E8ECF2" stroke-width="1" />
+<text x="792" y="436.6" font-size="12" fill="#798499" font-weight="400" text-anchor="end" >48</text>
+<line x1="804" y1="392.2" x2="1350" y2="392.2" stroke="#E8ECF2" stroke-width="1" />
+<text x="792" y="396.2" font-size="12" fill="#798499" font-weight="400" text-anchor="end" >96</text>
+<line x1="804" y1="351.8" x2="1350" y2="351.8" stroke="#E8ECF2" stroke-width="1" />
+<text x="792" y="355.8" font-size="12" fill="#798499" font-weight="400" text-anchor="end" >144</text>
+<line x1="804" y1="311.4" x2="1350" y2="311.4" stroke="#E8ECF2" stroke-width="1" />
+<text x="792" y="315.4" font-size="12" fill="#798499" font-weight="400" text-anchor="end" >192</text>
+<line x1="804" y1="271.0" x2="1350" y2="271.0" stroke="#E8ECF2" stroke-width="1" />
+<text x="792" y="275.0" font-size="12" fill="#798499" font-weight="400" text-anchor="end" >240</text>
+<text x="804.0" y="498" font-size="13" fill="#58647A" font-weight="400" text-anchor="middle" >4K</text>
+<text x="986.0" y="498" font-size="13" fill="#58647A" font-weight="400" text-anchor="middle" >32K</text>
+<text x="1168.0" y="498" font-size="13" fill="#58647A" font-weight="400" text-anchor="middle" >128K</text>
+<text x="1350.0" y="498" font-size="13" fill="#58647A" font-weight="400" text-anchor="middle" >256K</text>
+<text x="1077.0" y="518" font-size="12" fill="#798499" font-weight="400" text-anchor="middle" >Context length</text>
+<polyline points="804.00,295.80 986.00,327.58 1168.00,382.17 1350.00,412.46" fill="none" stroke="#3267AA" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="804.00" cy="295.80" r="4.5" fill="white" stroke="#3267AA" stroke-width="2.2"><title>Qwen3.5-4B · llama.cpp · Q4_K_M | 4K | 210.54 tokens/s</title></circle>
+<circle cx="986.00" cy="327.58" r="4.5" fill="white" stroke="#3267AA" stroke-width="2.2"><title>Qwen3.5-4B · llama.cpp · Q4_K_M | 32K | 172.78 tokens/s</title></circle>
+<circle cx="1168.00" cy="382.17" r="4.5" fill="white" stroke="#3267AA" stroke-width="2.2"><title>Qwen3.5-4B · llama.cpp · Q4_K_M | 128K | 107.92 tokens/s</title></circle>
+<circle cx="1350.00" cy="412.46" r="4.5" fill="white" stroke="#3267AA" stroke-width="2.2"><title>Qwen3.5-4B · llama.cpp · Q4_K_M | 256K | 71.93 tokens/s</title></circle>
+<polyline points="804.00,321.80 986.00,343.76 1168.00,385.21" fill="none" stroke="#9099A5" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="804.00" cy="321.80" r="4.5" fill="white" stroke="#9099A5" stroke-width="2.2"><title>Gemma4-E4B · llama.cpp · Q4_K_M | 4K | 179.64 tokens/s</title></circle>
+<circle cx="986.00" cy="343.76" r="4.5" fill="white" stroke="#9099A5" stroke-width="2.2"><title>Gemma4-E4B · llama.cpp · Q4_K_M | 32K | 153.55 tokens/s</title></circle>
+<circle cx="1168.00" cy="385.21" r="4.5" fill="white" stroke="#9099A5" stroke-width="2.2"><title>Gemma4-E4B · llama.cpp · Q4_K_M | 128K | 104.3 tokens/s</title></circle>
+<polyline points="804.00,288.39 986.00,325.14 1168.00,384.71 1350.00,415.89" fill="none" stroke="#E55C89" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="804.00" cy="288.39" r="4.5" fill="white" stroke="#E55C89" stroke-width="2.2"><title>Spark-X2.6-4B · llama.cpp · Q4_K_M | 4K | 219.34 tokens/s</title></circle>
+<circle cx="986.00" cy="325.14" r="4.5" fill="white" stroke="#E55C89" stroke-width="2.2"><title>Spark-X2.6-4B · llama.cpp · Q4_K_M | 32K | 175.67 tokens/s</title></circle>
+<circle cx="1168.00" cy="384.71" r="4.5" fill="white" stroke="#E55C89" stroke-width="2.2"><title>Spark-X2.6-4B · llama.cpp · Q4_K_M | 128K | 104.9 tokens/s</title></circle>
+<circle cx="1350.00" cy="415.89" r="4.5" fill="white" stroke="#E55C89" stroke-width="2.2"><title>Spark-X2.6-4B · llama.cpp · Q4_K_M | 256K | 67.85 tokens/s</title></circle>
+<polyline points="804.00,293.29 986.00,317.78 1168.00,363.41 1350.00,396.05" fill="none" stroke="#AB2858" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="7 5"/>
+<rect x="800.00" y="289.29" width="8" height="8" rx="1" fill="#AB2858" stroke="white" stroke-width="1"><title>Spark-X2.6-4B · TensorRT · INT4 | 4K | 213.52 tokens/s</title></rect>
+<rect x="982.00" y="313.78" width="8" height="8" rx="1" fill="#AB2858" stroke="white" stroke-width="1"><title>Spark-X2.6-4B · TensorRT · INT4 | 32K | 184.42 tokens/s</title></rect>
+<rect x="1164.00" y="359.41" width="8" height="8" rx="1" fill="#AB2858" stroke="white" stroke-width="1"><title>Spark-X2.6-4B · TensorRT · INT4 | 128K | 130.21 tokens/s</title></rect>
+<rect x="1346.00" y="392.05" width="8" height="8" rx="1" fill="#AB2858" stroke="white" stroke-width="1"><title>Spark-X2.6-4B · TensorRT · INT4 | 256K | 91.42 tokens/s</title></rect>
+<text x="48" y="580" font-size="20" fill="#253047" font-weight="700" text-anchor="start" >Mac M5 Pro · 16-core</text>
+<text x="1392" y="580" font-size="14" fill="#697489" font-weight="400" text-anchor="end" >llama.cpp · MLX</text>
+<line x1="48" y1="604" x2="74" y2="604" stroke="#3267AA" stroke-width="3" />
+<circle cx="61" cy="604" r="3.5" fill="#3267AA"/>
+<text x="83" y="608" font-size="13" fill="#4F5B70" font-weight="400" text-anchor="start" >Qwen3.5-4B · llama.cpp · Q4_K_M</text>
+<line x1="720" y1="604" x2="746" y2="604" stroke="#9099A5" stroke-width="3" />
+<circle cx="733" cy="604" r="3.5" fill="#9099A5"/>
+<text x="755" y="608" font-size="13" fill="#4F5B70" font-weight="400" text-anchor="start" >Gemma4-E4B · llama.cpp · Q4_K_M</text>
+<line x1="48" y1="629" x2="74" y2="629" stroke="#E55C89" stroke-width="3" />
+<circle cx="61" cy="629" r="3.5" fill="#E55C89"/>
+<text x="83" y="633" font-size="13" fill="#4F5B70" font-weight="600" text-anchor="start" >Spark-X2.6-4B · llama.cpp · Q4_K_M</text>
+<line x1="720" y1="629" x2="746" y2="629" stroke="#AB2858" stroke-width="3" stroke-dasharray="6 4"/>
+<circle cx="733" cy="629" r="3.5" fill="#AB2858"/>
+<text x="755" y="633" font-size="13" fill="#4F5B70" font-weight="600" text-anchor="start" >Spark-X2.6-4B · MLX · INT4</text>
+<rect x="48" y="652" width="656" height="324" rx="12" fill="#FAFBFD" stroke="#E8ECF2"/>
+<text x="70" y="684" font-size="18" fill="#253047" font-weight="700" text-anchor="start" >Prefill</text>
+<text x="682" y="684" font-size="12" fill="#798499" font-weight="400" text-anchor="end" >tokens/s</text>
+<line x1="116" y1="919.0" x2="662" y2="919.0" stroke="#E8ECF2" stroke-width="1" />
+<text x="104" y="923.0" font-size="12" fill="#798499" font-weight="400" text-anchor="end" >0</text>
+<line x1="116" y1="878.6" x2="662" y2="878.6" stroke="#E8ECF2" stroke-width="1" />
+<text x="104" y="882.6" font-size="12" fill="#798499" font-weight="400" text-anchor="end" >500</text>
+<line x1="116" y1="838.2" x2="662" y2="838.2" stroke="#E8ECF2" stroke-width="1" />
+<text x="104" y="842.2" font-size="12" fill="#798499" font-weight="400" text-anchor="end" >1k</text>
+<line x1="116" y1="797.8" x2="662" y2="797.8" stroke="#E8ECF2" stroke-width="1" />
+<text x="104" y="801.8" font-size="12" fill="#798499" font-weight="400" text-anchor="end" >1.5k</text>
+<line x1="116" y1="757.4" x2="662" y2="757.4" stroke="#E8ECF2" stroke-width="1" />
+<text x="104" y="761.4" font-size="12" fill="#798499" font-weight="400" text-anchor="end" >2k</text>
+<line x1="116" y1="717.0" x2="662" y2="717.0" stroke="#E8ECF2" stroke-width="1" />
+<text x="104" y="721.0" font-size="12" fill="#798499" font-weight="400" text-anchor="end" >2.5k</text>
+<text x="116.0" y="944" font-size="13" fill="#58647A" font-weight="400" text-anchor="middle" >4K</text>
+<text x="298.0" y="944" font-size="13" fill="#58647A" font-weight="400" text-anchor="middle" >32K</text>
+<text x="480.0" y="944" font-size="13" fill="#58647A" font-weight="400" text-anchor="middle" >128K</text>
+<text x="662.0" y="944" font-size="13" fill="#58647A" font-weight="400" text-anchor="middle" >256K</text>
+<text x="389.0" y="964" font-size="12" fill="#798499" font-weight="400" text-anchor="middle" >Context length</text>
+<polyline points="116.00,787.25 298.00,828.08 480.00,872.50 662.00,891.41" fill="none" stroke="#3267AA" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="116.00" cy="787.25" r="4.5" fill="white" stroke="#3267AA" stroke-width="2.2"><title>Qwen3.5-4B · llama.cpp · Q4_K_M | 4K | 1,630.55 tokens/s</title></circle>
+<circle cx="298.00" cy="828.08" r="4.5" fill="white" stroke="#3267AA" stroke-width="2.2"><title>Qwen3.5-4B · llama.cpp · Q4_K_M | 32K | 1,125.2 tokens/s</title></circle>
+<circle cx="480.00" cy="872.50" r="4.5" fill="white" stroke="#3267AA" stroke-width="2.2"><title>Qwen3.5-4B · llama.cpp · Q4_K_M | 128K | 575.49 tokens/s</title></circle>
+<circle cx="662.00" cy="891.41" r="4.5" fill="white" stroke="#3267AA" stroke-width="2.2"><title>Qwen3.5-4B · llama.cpp · Q4_K_M | 256K | 341.46 tokens/s</title></circle>
+<polyline points="116.00,781.68 298.00,818.19 480.00,864.67" fill="none" stroke="#9099A5" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="116.00" cy="781.68" r="4.5" fill="white" stroke="#9099A5" stroke-width="2.2"><title>Gemma4-E4B · llama.cpp · Q4_K_M | 4K | 1,699.55 tokens/s</title></circle>
+<circle cx="298.00" cy="818.19" r="4.5" fill="white" stroke="#9099A5" stroke-width="2.2"><title>Gemma4-E4B · llama.cpp · Q4_K_M | 32K | 1,247.68 tokens/s</title></circle>
+<circle cx="480.00" cy="864.67" r="4.5" fill="white" stroke="#9099A5" stroke-width="2.2"><title>Gemma4-E4B · llama.cpp · Q4_K_M | 128K | 672.44 tokens/s</title></circle>
+<polyline points="116.00,768.85 298.00,816.63 480.00,871.58 662.00,891.28" fill="none" stroke="#E55C89" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="116.00" cy="768.85" r="4.5" fill="white" stroke="#E55C89" stroke-width="2.2"><title>Spark-X2.6-4B · llama.cpp · Q4_K_M | 4K | 1,858.32 tokens/s</title></circle>
+<circle cx="298.00" cy="816.63" r="4.5" fill="white" stroke="#E55C89" stroke-width="2.2"><title>Spark-X2.6-4B · llama.cpp · Q4_K_M | 32K | 1,266.98 tokens/s</title></circle>
+<circle cx="480.00" cy="871.58" r="4.5" fill="white" stroke="#E55C89" stroke-width="2.2"><title>Spark-X2.6-4B · llama.cpp · Q4_K_M | 128K | 586.9 tokens/s</title></circle>
+<circle cx="662.00" cy="891.28" r="4.5" fill="white" stroke="#E55C89" stroke-width="2.2"><title>Spark-X2.6-4B · llama.cpp · Q4_K_M | 256K | 343.02 tokens/s</title></circle>
+<polyline points="116.00,727.57 298.00,778.23 480.00,837.70 662.00,870.99" fill="none" stroke="#AB2858" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="7 5"/>
+<rect x="112.00" y="723.57" width="8" height="8" rx="1" fill="#AB2858" stroke="white" stroke-width="1"><title>Spark-X2.6-4B · MLX · INT4 | 4K | 2,369.17 tokens/s</title></rect>
+<rect x="294.00" y="774.23" width="8" height="8" rx="1" fill="#AB2858" stroke="white" stroke-width="1"><title>Spark-X2.6-4B · MLX · INT4 | 32K | 1,742.24 tokens/s</title></rect>
+<rect x="476.00" y="833.70" width="8" height="8" rx="1" fill="#AB2858" stroke="white" stroke-width="1"><title>Spark-X2.6-4B · MLX · INT4 | 128K | 1,006.2 tokens/s</title></rect>
+<rect x="658.00" y="866.99" width="8" height="8" rx="1" fill="#AB2858" stroke="white" stroke-width="1"><title>Spark-X2.6-4B · MLX · INT4 | 256K | 594.22 tokens/s</title></rect>
+<rect x="736" y="652" width="656" height="324" rx="12" fill="#FAFBFD" stroke="#E8ECF2"/>
+<text x="758" y="684" font-size="18" fill="#253047" font-weight="700" text-anchor="start" >Decode</text>
+<text x="1370" y="684" font-size="12" fill="#798499" font-weight="400" text-anchor="end" >tokens/s</text>
+<line x1="804" y1="919.0" x2="1350" y2="919.0" stroke="#E8ECF2" stroke-width="1" />
+<text x="792" y="923.0" font-size="12" fill="#798499" font-weight="400" text-anchor="end" >0</text>
+<line x1="804" y1="878.6" x2="1350" y2="878.6" stroke="#E8ECF2" stroke-width="1" />
+<text x="792" y="882.6" font-size="12" fill="#798499" font-weight="400" text-anchor="end" >20</text>
+<line x1="804" y1="838.2" x2="1350" y2="838.2" stroke="#E8ECF2" stroke-width="1" />
+<text x="792" y="842.2" font-size="12" fill="#798499" font-weight="400" text-anchor="end" >40</text>
+<line x1="804" y1="797.8" x2="1350" y2="797.8" stroke="#E8ECF2" stroke-width="1" />
+<text x="792" y="801.8" font-size="12" fill="#798499" font-weight="400" text-anchor="end" >60</text>
+<line x1="804" y1="757.4" x2="1350" y2="757.4" stroke="#E8ECF2" stroke-width="1" />
+<text x="792" y="761.4" font-size="12" fill="#798499" font-weight="400" text-anchor="end" >80</text>
+<line x1="804" y1="717.0" x2="1350" y2="717.0" stroke="#E8ECF2" stroke-width="1" />
+<text x="792" y="721.0" font-size="12" fill="#798499" font-weight="400" text-anchor="end" >100</text>
+<text x="804.0" y="944" font-size="13" fill="#58647A" font-weight="400" text-anchor="middle" >4K</text>
+<text x="986.0" y="944" font-size="13" fill="#58647A" font-weight="400" text-anchor="middle" >32K</text>
+<text x="1168.0" y="944" font-size="13" fill="#58647A" font-weight="400" text-anchor="middle" >128K</text>
+<text x="1350.0" y="944" font-size="13" fill="#58647A" font-weight="400" text-anchor="middle" >256K</text>
+<text x="1077.0" y="964" font-size="12" fill="#798499" font-weight="400" text-anchor="middle" >Context length</text>
+<polyline points="804.00,786.04 986.00,804.65 1168.00,842.50 1350.00,867.67" fill="none" stroke="#3267AA" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="804.00" cy="786.04" r="4.5" fill="white" stroke="#3267AA" stroke-width="2.2"><title>Qwen3.5-4B · llama.cpp · Q4_K_M | 4K | 65.82 tokens/s</title></circle>
+<circle cx="986.00" cy="804.65" r="4.5" fill="white" stroke="#3267AA" stroke-width="2.2"><title>Qwen3.5-4B · llama.cpp · Q4_K_M | 32K | 56.61 tokens/s</title></circle>
+<circle cx="1168.00" cy="842.50" r="4.5" fill="white" stroke="#3267AA" stroke-width="2.2"><title>Qwen3.5-4B · llama.cpp · Q4_K_M | 128K | 37.87 tokens/s</title></circle>
+<circle cx="1350.00" cy="867.67" r="4.5" fill="white" stroke="#3267AA" stroke-width="2.2"><title>Qwen3.5-4B · llama.cpp · Q4_K_M | 256K | 25.41 tokens/s</title></circle>
+<polyline points="804.00,793.46 986.00,812.57 1168.00,849.31" fill="none" stroke="#9099A5" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="804.00" cy="793.46" r="4.5" fill="white" stroke="#9099A5" stroke-width="2.2"><title>Gemma4-E4B · llama.cpp · Q4_K_M | 4K | 62.15 tokens/s</title></circle>
+<circle cx="986.00" cy="812.57" r="4.5" fill="white" stroke="#9099A5" stroke-width="2.2"><title>Gemma4-E4B · llama.cpp · Q4_K_M | 32K | 52.69 tokens/s</title></circle>
+<circle cx="1168.00" cy="849.31" r="4.5" fill="white" stroke="#9099A5" stroke-width="2.2"><title>Gemma4-E4B · llama.cpp · Q4_K_M | 128K | 34.5 tokens/s</title></circle>
+<polyline points="804.00,765.20 986.00,793.68 1168.00,842.79 1350.00,871.67" fill="none" stroke="#E55C89" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="804.00" cy="765.20" r="4.5" fill="white" stroke="#E55C89" stroke-width="2.2"><title>Spark-X2.6-4B · llama.cpp · Q4_K_M | 4K | 76.14 tokens/s</title></circle>
+<circle cx="986.00" cy="793.68" r="4.5" fill="white" stroke="#E55C89" stroke-width="2.2"><title>Spark-X2.6-4B · llama.cpp · Q4_K_M | 32K | 62.04 tokens/s</title></circle>
+<circle cx="1168.00" cy="842.79" r="4.5" fill="white" stroke="#E55C89" stroke-width="2.2"><title>Spark-X2.6-4B · llama.cpp · Q4_K_M | 128K | 37.73 tokens/s</title></circle>
+<circle cx="1350.00" cy="871.67" r="4.5" fill="white" stroke="#E55C89" stroke-width="2.2"><title>Spark-X2.6-4B · llama.cpp · Q4_K_M | 256K | 23.43 tokens/s</title></circle>
+<polyline points="804.00,744.11 986.00,773.46 1168.00,826.46 1350.00,862.76" fill="none" stroke="#AB2858" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="7 5"/>
+<rect x="800.00" y="740.11" width="8" height="8" rx="1" fill="#AB2858" stroke="white" stroke-width="1"><title>Spark-X2.6-4B · MLX · INT4 | 4K | 86.58 tokens/s</title></rect>
+<rect x="982.00" y="769.46" width="8" height="8" rx="1" fill="#AB2858" stroke="white" stroke-width="1"><title>Spark-X2.6-4B · MLX · INT4 | 32K | 72.05 tokens/s</title></rect>
+<rect x="1164.00" y="822.46" width="8" height="8" rx="1" fill="#AB2858" stroke="white" stroke-width="1"><title>Spark-X2.6-4B · MLX · INT4 | 128K | 45.81 tokens/s</title></rect>
+<rect x="1346.00" y="858.76" width="8" height="8" rx="1" fill="#AB2858" stroke="white" stroke-width="1"><title>Spark-X2.6-4B · MLX · INT4 | 256K | 27.84 tokens/s</title></rect>
+<line x1="48" y1="1026" x2="1392" y2="1026" stroke="#E8ECF2" stroke-width="1" />
+<text x="48" y="1050" font-size="12" fill="#798499" font-weight="400" text-anchor="start" >Missing measurements are omitted. Each test group uses its own throughput scale.</text>
+<text x="1392" y="1050" font-size="12" fill="#798499" font-weight="400" text-anchor="end" >Higher is better</text>
+</g></svg>

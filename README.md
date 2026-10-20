@@ -1,10 +1,10 @@
 <p align="center">
   <img src="assets/xhtoken.png" width="15%" />
 </p>
-<h1 align="center">Spark-X2.5</h1>
+<h1 align="center">Spark-X2.6-4B: Advancing the Frontier of On-Device Agents for Real-World Tasks</h1>
 
 <div align="center">
-  
+
 [![Slack](https://img.shields.io/badge/Slack-Join-4A154B?logo=slack&logoColor=white)](https://join.slack.com/t/tokenspark/shared_invite/zt-432qf8l2f-5~dLyXv8uETr0P0UuC07nw)
 [![Discord](https://img.shields.io/badge/Discord-Join-5865F2?logo=discord&logoColor=white)](https://discord.gg/kTDE2Hg8aw)
 [![YouTube](https://img.shields.io/badge/YouTube-Subscribe-FF0000?logo=youtube&logoColor=white)](https://www.youtube.com/@SparkLLM)
@@ -16,126 +16,108 @@
 
 </div>
 
-Welcome to the GitHub repository of Spark-X2.5 open model series. You can find official information about Spark-X2.5, and post your questions [here(Issues)](https://github.com/XHToken/Spark-X2.5/issues).
-
-## Introduction
-
-Today, we are introducing Spark-X2.5-4B and Spark-X2.5-1.7B, two compact, general-purpose language models designed to make capable AI more practical, efficient, and accessible. The models deliver strong performance across a broad range of everyday tasks—including conversation, writing, translation, reasoning, coding, tool use, and agentic workflows—achieving leading results among open-source models of comparable size. Spark-X2.5 combines an efficiency-oriented architecture with native context windows of up to 1M tokens, and support for more than 200 languages. 
-
-**Technical Highlights**:
-- **Efficient Architecture and Native 1M-token Context**: The models use a hybrid attention architecture that combines one full-attention layer with three sliding-window attention layers. This design substantially reduces the computational overhead typically associated with long-context models while natively supporting a context window of up to 1M tokens.
-- **Strong Coding and Agent Capabilities**: The models are deeply integrated with popular agent harnesses, including Codex, Claude Code, OpenClaw, and Hermes. They deliver state-of-the-art performance among models of comparable size across everyday coding, agentic workflows, reasoning, and instruction-following tasks.
-- **Broad Hardware and Software Compatibility**: The models support a wide range of hardware platforms, including NVIDIA, Huawei, Hygon, HOUMO.AI, etc. It is compatible with leading inference frameworks such as vLLM, SGLang, llama.cpp, MLX, and can be deployed quickly through platforms including Ollama and LM Studio. The models can also be customized using popular fine-tuning frameworks such as LLaMA-Factory. Across multiple hardware platforms, they deliver superior TTFT, TOPT, and overall inference efficiency compared with similarly sized models.
-- **Advanced Training Algorithms**: The models were trained on Huawei Ascend clusters. Large-scale reinforcement learning and post-training techniques such as MOPD significantly enhance its reasoning, coding, agentic, and instruction-following capabilities.
+Welcome to the GitHub repository of Spark-X2.6 open model series. You can find official information about Spark-X2.6, and post your questions [here(Issues)](https://github.com/XHToken/Spark-X2.6/issues).
 
 <p align="center">
   <img src="assets/benchmark.svg" />
 </p>
 
+## Introduction
+A little over a month has passed since Spark-X2.5. In the rapidly evolving world of AI agents, that is enough time to rethink, refine, and move the frontier forward. Building on the Spark-X2.5-4B, we introduce **Spark-X2.6-4B**, the latest generation of our compact, general-purpose language models for on-device deployment. 
+
+Spark-X2.6-4B retains exactly the same architecture as Spark-X2.5-4B, achieving its capability gains through improved post-training. It delivers substantial improvements in coding, agent, long-context, multilingual, reasoning, etc. These advances enable more capable and practical on-device AI for developers and users tackling real-world tasks.
+
+**Technical Highlights**:
+- **Stronger Coding, Agentic, and Long-Context Capabilities**: The models deliver substantial improvements in agentic workflows involving complex tool use, multi-step planning, and software engineering. They achieve state-of-the-art performance among similarly sized open-source models, matching or even surpassing models with approximately 9B parameters.
+- **Controllable Thinking Budget**: The models provide three configurable thinking levels—none, low, high—allowing applications to balance reasoning quality, latency, and inference cost dynamically.
+
 ## Release
 
-- [2026/09/15] 🤝 Added [ollama](https://github.com/ollama/ollama/releases/tag/v0.34.1) support for Spark-X2.5 model architecture.
-- [2026/09/11] 🚀 Added native support for Spark-X2.5 model in PocketPal AI app, now available on [App Store](https://apps.apple.com/us/app/pocketpal-ai/id6502579498) and [Google Play](https://play.google.com/store/apps/details?id=com.pocketpalai).
-- [2026/09/08] 🤝 Added [LM Studio](https://lmstudio.ai/download) support for Spark-X2.5 model architecture.
-- [2026/09/06] 🤝 Added native model architecture support for Spark‑X2.5 (Spark2_5ForCausalLM) in [llama.cpp](https://github.com/ggml-org/llama.cpp/releases/tag/b10829).
-- [2026/09/04] 🚀 Released FP8 and INT8 quantized versions of Spark-X2.5-4B and Spark-X2.5-1.7B.
-- [2026/09/03] 🤝 Added deployment support for vLLM and SGLang on Ascend NPU.
-- [2026/09/02] 🚀 Added [AtomGit](https://ai.atomgit.com/collections/2095030878254981121) as a new distribution channel.
+- **[2026/10/21] 🚀 Global launch of the Spark-X2.6 model series on [Hugging Face](https://huggingface.co/collections/XHToken/spark-x26), [ModelScope](https://www.modelscope.cn/collections/XHToken/Spark-X26), [Ollama](https://ollama.com/SparkLLM).**
+- [2026/09/06] 🤝 Added native model architecture support for Spark‑X2.5 & X2.6 (Spark2_5ForCausalLM) in [llama.cpp](https://github.com/ggml-org/llama.cpp/releases/tag/b10829).
 - [2026/09/01] 🚀 Global launch of the Spark-X2.5 model series on [Hugging Face](https://huggingface.co/collections/XHToken/spark-x25), [ModelScope](https://www.modelscope.cn/collections/XHToken/Spark-X25), [Ollama](https://ollama.com/SparkLLM), [Modelers](https://modelers.cn/user/XHToken), and [SCNet](https://www.scnet.cn/ui/aihub/models/XHToken/Spark-X2.5-4B).
 
 ## Model Downloads
 
-The Spark-X2.5-4B and Spark-X2.5-1.7B are available on the following platforms. Choose the most suitable download source for your region and environment:
+Spark-X2.6-4B is available on the following platforms. Choose the most suitable download source for your region and environment:
 
 | Platform | Download | Description |
 | --- | --- | --- |
-| Hugging Face | [Spark-X2.5 in Huggingface](https://huggingface.co/collections/XHToken/spark-x25) | Official Hugging Face model collection for Spark-X2.5 |
-| ModelScope | [Spark-X2.5 in ModelScope](https://www.modelscope.cn/collections/XHToken/Spark-X25) | Recommended download source for users in China |
-| Modelers | [Spark-X2.5 in Modelers](https://modelers.cn/user/XHToken) | Recommended download source for users with Ascend chips |
-| Ollama | [Spark-X2.5 in Ollama](https://ollama.com/SparkLLM) | Download and run the model locally with Ollama |
-| SCNet | [Spark-X2.5 in SCNet](https://www.scnet.cn/ui/aihub/models/XHToken/Spark-X2.5-4B) | Recommended download source for users with Hygon chips | 
-| AtomGit | [Spark-X2.5 in AtomGit](https://ai.atomgit.com/collections/2095030878254981121) | Recommended download source for users in China |
-<!-- | SourceFind | [Spark-X2.5 in SourceFind](https://developer.sourcefind.cn/modelzoo) | Recommended download source for users with Hygon chips | -->
-
-> If Hugging Face is slow or unavailable in your region, try ModelScope, Modelers, SCNet or AtomGit instead.
-
-<!-- > If Hugging Face is slow or unavailable in your region, try ModelScope, Modelers, SCNet, or SourceFind instead. -->
+| Hugging Face | [Spark-X2.6 in Huggingface](https://huggingface.co/collections/XHToken/spark-x26) | Official Hugging Face model collection for Spark-X2.6 |
+| ModelScope | [Spark-X2.6 in ModelScope](https://www.modelscope.cn/collections/XHToken/Spark-X26) | Recommended download source for users in China |
+| Ollama | [Spark-X2.6 in Ollama](https://ollama.com/SparkLLM) | Download and run the model locally with Ollama |
 
 
 ## Benchmarks
-<div style="overflow-x: auto; width: 100%;">
-<table style="width: 100%; min-width: 1080px; border-collapse: collapse; text-align: center;">
-  <colgroup>
-    <col style="width: 190px;">
-    <col span="8" style="width: 110px;">
-  </colgroup>
-  <thead>
-    <tr>
-      <th align="center">Benchmark</th>
-      <th align="center"><span style="white-space: nowrap;">Spark‑X2.5‑4B</span></th>
-      <th align="center"><span style="white-space: nowrap;">Spark‑X2.5‑1.7B</span></th>
-      <th align="center"><span style="white-space: nowrap;">Qwen3.5‑9B</span></th>
-      <th align="center"><span style="white-space: nowrap;">Qwen3.5‑4B</span></th>
-      <th align="center"><span style="white-space: nowrap;">Qwen3.5‑2B</span></th>
-      <th align="center"><span style="white-space: nowrap;">Gemma4‑12B</span></th>
-      <th align="center"><span style="white-space: nowrap;">Gemma4‑E4B</span></th>
-      <th align="center"><span style="white-space: nowrap;">Gemma4‑E2B</span></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><th colspan="9" align="left">Agent</th></tr>
-    <tr><td align="center">BFCL‑V4</td><td align="center">65.1</td><td align="center">46.9</td><td align="center"><strong>66.1*</strong></td><td align="center">50.3*</td><td align="center">43.6*</td><td align="center">37.4</td><td align="center">36.9</td><td align="center">30.2</td></tr>
-    <tr><td align="center">τ²‑bench</td><td align="center">75.1</td><td align="center">65.3</td><td align="center">79.1*</td><td align="center"><strong>79.9*</strong></td><td align="center">48.8*</td><td align="center">69.0*</td><td align="center">42.2*</td><td align="center">24.5*</td></tr>
-    <tr><td align="center">τ³‑bench</td><td align="center"><strong>30.4</strong></td><td align="center">20.1</td><td align="center">9.3</td><td align="center">6.7</td><td align="center">4.1</td><td align="center">13.3</td><td align="center">10.1</td><td align="center">8.8</td></tr>
-    <tr><td align="center">MCP‑Atlas</td><td align="center"><strong>54.6</strong></td><td align="center">23.4</td><td align="center">47.4*</td><td align="center">40.8*</td><td align="center">14.8</td><td align="center">30.5*</td><td align="center">15.0*</td><td align="center">12.6</td></tr>
-    <tr><td align="center">MCP‑Mark</td><td align="center"><strong>14.2</strong></td><td align="center">2.3</td><td align="center">13.4</td><td align="center">12.5</td><td align="center">–</td><td align="center">–</td><td align="center">–</td><td align="center">–</td></tr>
-    <tr><td align="center"><span style="white-space: nowrap;">Workspace Bench</span></td><td align="center"><strong>31.2</strong></td><td align="center">18.9</td><td align="center">25.5</td><td align="center">21.3</td><td align="center">7.7</td><td align="center">–</td><td align="center">–</td><td align="center">–</td></tr>
-    <tr><td align="center">VitaBench2.0</td><td align="center"><strong>25.2</strong></td><td align="center">8.3</td><td align="center">15.6</td><td align="center">18.2</td><td align="center">5.2</td><td align="center">12.4</td><td align="center">4.8</td><td align="center">4.4</td></tr>
-    <tr><td align="center">BrowseComp</td><td align="center"><strong>40.9</strong></td><td align="center">29.7</td><td align="center">8.3</td><td align="center">14.3</td><td align="center">3.1</td><td align="center">10.0</td><td align="center">8.3</td><td align="center">3.7</td></tr>
-    <tr><th colspan="9" align="left">Code</th></tr>
-    <tr><td align="center"><span style="white-space: nowrap;">SWE‑Bench Pro</span></td><td align="center"><strong>44.4</strong></td><td align="center">10.4</td><td align="center">33.8*</td><td align="center">29.4*</td><td align="center">1.9</td><td align="center">21.9*</td><td align="center">4.0*</td><td align="center">–</td></tr>
-    <tr><td align="center"><span style="white-space: nowrap;">SWE‑Bench Verified</span></td><td align="center">41.6</td><td align="center">28.3</td><td align="center"><strong>53.1*</strong></td><td align="center">38.8*</td><td align="center">6.8</td><td align="center">44.2*</td><td align="center">14.0*</td><td align="center">–</td></tr>
-    <tr><td align="center"><span style="white-space: nowrap;">SWE‑Bench Multilingual</span></td><td align="center"><strong>53.3</strong></td><td align="center">23.3</td><td align="center">43.3</td><td align="center">27.7</td><td align="center">5.0</td><td align="center">32.5*</td><td align="center">–</td><td align="center">–</td></tr>
-    <tr><td align="center">SciCode</td><td align="center">34.7</td><td align="center">18.2</td><td align="center">32.7*</td><td align="center">24.0</td><td align="center">6.0</td><td align="center"><strong>39.8</strong></td><td align="center">27.5</td><td align="center">20.5</td></tr>
-    <tr><th colspan="9" align="left">Math</th></tr>
-    <tr><td align="center"><span style="white-space: nowrap;">Gaokao 2026</span></td><td align="center">133.4</td><td align="center">114.8</td><td align="center"><strong>135.5</strong></td><td align="center">130.3</td><td align="center">94.0</td><td align="center">130.6</td><td align="center">102.4</td><td align="center">81.8</td></tr>
-    <tr><td align="center"><span style="white-space: nowrap;">AIME 2026</span></td><td align="center"><strong>90.7</strong></td><td align="center">69.4</td><td align="center">88.2</td><td align="center">83.0</td><td align="center">30.8</td><td align="center">82.1*</td><td align="center">42.5*</td><td align="center">37.5*</td></tr>
-    <tr><td align="center"><span style="white-space: nowrap;">HMMT Feb 2026</span></td><td align="center"><strong>81.2</strong></td><td align="center">48.4</td><td align="center">70.8</td><td align="center">69.7</td><td align="center">21.5</td><td align="center">65.6</td><td align="center">34.2</td><td align="center">20.5</td></tr>
-    <tr><td align="center"><span style="white-space: nowrap;">IMO‑AnswerBench</span></td><td align="center"><strong>74.2</strong></td><td align="center">45.4</td><td align="center">69.8</td><td align="center">68.5</td><td align="center">–</td><td align="center">57.2</td><td align="center">26.9</td><td align="center">22.6</td></tr>
-    <tr><th colspan="9" align="left">General &amp; Knowledge</th></tr>
-    <tr><td align="center">IFEval</td><td align="center">93.0</td><td align="center">89.5</td><td align="center">91.5*</td><td align="center">89.8*</td><td align="center">78.6*</td><td align="center"><strong>94.8</strong></td><td align="center">45.3</td><td align="center">34.8</td></tr>
-    <tr><td align="center">IFBench</td><td align="center"><strong>75.0</strong></td><td align="center">66.3</td><td align="center">64.5</td><td align="center">59.2</td><td align="center">41.3*</td><td align="center">73.5*</td><td align="center">44.0*</td><td align="center">22.7</td></tr>
-    <tr><td align="center">AA‑LCR</td><td align="center">56.3</td><td align="center">24.3</td><td align="center"><strong>63.0*</strong></td><td align="center">57.0*</td><td align="center">25.6*</td><td align="center">55.3*</td><td align="center">34.7</td><td align="center">18.3</td></tr>
-    <tr><td align="center">HLE</td><td align="center">12.3</td><td align="center">6.3</td><td align="center"><strong>14.3</strong></td><td align="center">8.6</td><td align="center">2.1</td><td align="center">13.1</td><td align="center">3.9</td><td align="center">2.5</td></tr>
-    <tr><td align="center">GPQA</td><td align="center">67.4</td><td align="center">43.8</td><td align="center"><strong>77.2</strong></td><td align="center">67.2</td><td align="center">44.6</td><td align="center">72.8</td><td align="center">54.5</td><td align="center">43.8</td></tr>
-  </tbody>
-</table>
-</div>
+We evaluate our models and compare them with leading on-device models of similar size across a broad range of tasks, including agent, code, math,  general and knowledge.
+Spark-X2.6-4B achieves best-in-class performance among models of comparable size, while matching or exceeding the performance of larger 9B models on several benchmarks.
 
-> - \* denotes reported results from publicly‑released model cards / papers and - denotes scores not yet available.
-> - All evaluations are conducted in thinking mode. The recommended sampling parameters for Spark-X2.5 are temperature=1.0, top_p=0.95, and top_k=-1.
-> - Gaokao 2026 consists of the five 2026 Chinese GAOKAO examinations (National I,National II, Beijing, Shanghai, Tianjin), each graded out of 150 points.
+<p align="center">
+  <img src="./assets/all_benchmark.svg" alt="all Spark-X2.6 benchmarks" width="1010">
+</p>
+
+
+## Edge Inference
+Spark-X2.6-4B delivers inference efficiency on par with or better than comparable on-device models, including Qwen3.5-4B and Gemma-E4B. It combines this efficiency with stronger capabilities, making it a practical choice for responsive, resource-conscious on-device AI.
+<p align="center">
+  <img src="./assets/inference.svg" alt="Spark-X2.6 inference" width="1010">
+</p>
+
+
 
 ## Quickstart
 
-The examples below serve a local Spark-X2.5-4B checkpoint. Set `MODEL_PATH` to its absolute path before starting a container:
+### Transformers
 
-```bash
-export MODEL_PATH=/absolute/path/to/Spark-X2.5-4B
+Install the required version with `pip install transformers==4.57.1`.
+
+```python
+from transformers import AutoModelForCausalLM, AutoTokenizer
+model_id = "XHToken/Spark-X2.6-4B"
+tokenizer = AutoTokenizer.from_pretrained(model_id)
+model = AutoModelForCausalLM.from_pretrained(
+    model_id,
+    trust_remote_code=True,
+    torch_dtype="auto",
+    device_map="auto",
+)
+messages = [{"role": "user", "content": "What is the capital of Anhui Province?"}]
+inputs = tokenizer.apply_chat_template(
+    messages,
+    tokenize=True,
+    add_generation_prompt=True,
+    enable_thinking=True,
+    return_dict=True,
+    return_tensors="pt",
+).to(model.device)
+outputs = model.generate(
+    **inputs,
+    max_new_tokens=131072,
+    do_sample=True,
+    temperature=1.0,
+    top_p=0.95,
+    top_k=0,
+)
+print(tokenizer.decode(outputs[0][inputs["input_ids"].shape[-1]:], skip_special_tokens=True))
 ```
 
 ### SGLang
 
+The examples below serve a local Spark-X2.6-4B checkpoint. Set `MODEL_PATH` to its absolute path before starting a container:
+
+```bash
+export MODEL_PATH=/absolute/path/to/Spark-X2.6-4B
+```
+
 #### Install SGLang
 
-##### For NVIDIA GPUs:
+Use the pre-built image that tracks the Spark-X2.6 runtime:
 
-Use the pre-built image that tracks the Spark-X2.5 runtime:
+##### For NVIDIA GPUs:
 
 ```bash
 docker pull lmsysorg/sglang:nightly-dev-cu13-20260827-20621aa1
 ```
-
 ##### For Ascend NPUs:
 
 ```bash
@@ -154,22 +136,24 @@ The following commands start an OpenAI-compatible API server configured for a ma
 
 #### Server
 
+##### NVIDIA GPU:
+
 ```bash
 docker run --rm -it \
   --gpus '"device=0"' \
   --ipc=host \
   -p 30000:30000 \
-  -v "$MODEL_PATH":/root/Spark-X2.5-4B:ro \
+  -v "$MODEL_PATH:/root/Spark-X2.6-4B:ro" \
   lmsysorg/sglang:nightly-dev-cu13-20260827-20621aa1 \
   python -m sglang.launch_server \
-    --model-path /root/Spark-X2.5-4B \
-    --served-model-name spark2.5 \
+    --model-path /root/Spark-X2.6-4B \
+    --served-model-name spark2.6 \
     --tool-call-parser spark25 \
     --reasoning-parser qwen3 \
     --tp-size 1 \
     --mem-fraction-static 0.8 \
     --context-length 1048576 \
-    --chat-template /root/Spark-X2.5-4B/chat_template.jinja \
+    --chat-template /root/Spark-X2.6-4B/chat_template.jinja \
     --host 0.0.0.0 \
     --port 30000
 ```
@@ -191,18 +175,18 @@ docker run -it --rm -e ASCEND_USE_FIA=1 --network=host --ipc=host --shm-size=16g
     --volume /etc/ascend_install.info:/etc/ascend_install.info \
     --volume /var/queue_schedule:/var/queue_schedule \
     --volume ~/.cache/:/root/.cache/ \
-    --volume "$MODEL_PATH:/root/Spark-X2.5-4B:ro" \
+    --volume "$MODEL_PATH:/root/Spark-X2.6-4B:ro" \
     --entrypoint=python \
     "$SGLANG_IMAGE" \
     -m sglang.launch_server \
-      --model-path /root/Spark-X2.5-4B \
-      --served-model-name spark2.5 \
+      --model-path /root/Spark-X2.6-4B \
+      --served-model-name spark2.6 \
       --tool-call-parser spark25 \
       --reasoning-parser qwen3 \
       --tp-size 1 \
       --mem-fraction-static 0.8 \
       --context-length 1048576 \
-      --chat-template /root/Spark-X2.5-4B/chat_template.jinja \
+      --chat-template /root/Spark-X2.6-4B/chat_template.jinja \
       --host 0.0.0.0 \
       --port 30000
 ```
@@ -215,7 +199,7 @@ Thinking is enabled by default by both the chat template and the Qwen3 reasoning
 curl -s http://localhost:30000/v1/chat/completions \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "spark2.5",
+    "model": "spark2.6",
     "messages": [
       {
         "role": "user",
@@ -242,16 +226,16 @@ vLLM provides an official Docker image for NVIDIA GPU deployment:
 docker run --rm --gpus all \
   --ipc=host \
   -p 30000:30000 \
-  -v "$MODEL_PATH:/models/Spark-X2.5-4B:ro" \
+  -v "$MODEL_PATH:/models/Spark-X2.6-4B:ro" \
   vllm/vllm-openai:latest \
-  --model /models/Spark-X2.5-4B \
+  --model /models/Spark-X2.6-4B \
   --port 30000 \
   --trust-remote-code \
   --served-model-name spark25 \
   --tensor-parallel-size 1 \
   --gpu-memory-utilization 0.7 \
   --enable-prefix-caching \
-  --chat-template /models/Spark-X2.5-4B/chat_template.jinja
+  --chat-template /models/Spark-X2.6-4B/chat_template.jinja
 ```
 
 For Ascend NPUs, choose an official image for the fastest setup.
@@ -346,8 +330,8 @@ Install the Spark plugin inside the container:
 
 ```bash
 pip install uv
-uv venv ~/spark2_5
-source ~/spark2_5/bin/activate
+uv venv ~/spark2_6
+source ~/spark2_6/bin/activate
 git clone https://github.com/XHToken/Spark-plugin.git
 cd ./Spark-plugin
 uv pip install .
@@ -356,14 +340,14 @@ uv pip install .
 #### Server
 
 ```bash
-vllm serve "/models/Spark-X2.5-4B" \
+vllm serve "/models/Spark-X2.6-4B" \
  --port "30000" \
  --trust-remote-code \
  --served-model-name spark25 \
  --tensor-parallel-size 1 \
  --gpu-memory-utilization 0.7 \
  --enable-prefix-caching \
- --chat-template /models/Spark-X2.5-4B/chat_template.jinja
+ --chat-template /models/Spark-X2.6-4B/chat_template.jinja
 ```
 
 #### Client
@@ -373,7 +357,7 @@ curl -s http://127.0.0.1:30000/v1/chat/completions \
   -H "Content-Type: application/json" \
   -d '{
     "model": "spark25",
-    "messages": [{"role": "user", "content": "安徽的省会在哪里？"}],
+    "messages": [{"role": "user", "content": "What is the capital of Anhui Province?"}],
     "temperature": 1.0, 
     "top_k": -1,
     "top_p": 0.95
@@ -381,7 +365,7 @@ curl -s http://127.0.0.1:30000/v1/chat/completions \
 ```
 
 ### MLX
-Spark-MLX-LLM runs the original Spark-X2.5 Hugging Face checkpoints locally. It supports Apple silicon GPU, Linux CPU, and NVIDIA CUDA on Linux. No GGUF conversion is required.
+Spark-MLX-LLM runs the original Spark-X2.6 Hugging Face checkpoints locally. It supports Apple silicon GPU, Linux CPU, and NVIDIA CUDA on Linux. No GGUF conversion is required.
 
 #### Installation
 
@@ -408,27 +392,42 @@ python -m pip install -e '.[cuda13]'
 spark-mlx-generate \
   --device gpu \
   --dtype bfloat16 \
-  --model XHToken/Spark-X2.5-1.7B \
-  --prompt "安徽的省会在哪里？" \
+  --model XHToken/Spark-X2.6-4B \
+  --prompt "What is the capital of Anhui Province?" \
   --max-tokens 512 \
   --temp 0
 ```
 
+### llama.cpp
+
+> [!NOTE]
+> Native `spark2_5` support requires [llama.cpp](https://github.com/ggml-org/llama.cpp/) `b10828` or later.
+
+Run the model in the CLI:
+```bash
+llama cli -m /path/to/Spark-X2.6-4B-GGUF
+```
+
+Launch the OpenAI-compatible API server:
+```bash
+llama serve -m /path/to/Spark-X2.6-4B-GGUF
+```
+
 ### Ollama
 
-1. Download and install Ollama from [ollama.com](https://ollama.com/download) (v0.34.1 or later).
+1. Download and install Ollama from [ollama.com](https://ollama.com/download) (v0.34.2 or later).
 
 2. Run the model:
 
 ```bash
-ollama run SparkLLM/Spark-X2.5-1.7B
+ollama run SparkLLM/Spark-X2.6-4B
 ```
 
 ### LM Studio
 
 1. Download and install LM Studio from [lmstudio.ai](https://lmstudio.ai/download) (0.4.0 or later).
 
-2. Search for "Spark-X2.5" in LM Studio and download the model.
+2. Search for "Spark-X2.6" in LM Studio and download the model.
 
 3. Load the model and start chatting.
 
@@ -438,8 +437,8 @@ ollama run SparkLLM/Spark-X2.5-1.7B
 # List available models
 lms ls
 
-# Run chat with Spark-X2.5
-lms chat spark-x2.5
+# Run chat with Spark-X2.6
+lms chat spark-x2.6
 ```
 
 ### Unsloth
@@ -447,7 +446,7 @@ lms chat spark-x2.5
 [Download Unsloth Studio](https://unsloth.ai/)
 
 > [!NOTE]
-> The latest Unsloth Studio supports native Spark-X2.5 GGUF inference.
+> The latest Unsloth Studio supports native Spark-X2.6 GGUF inference.
 
 ### Fine-Tuning
 
@@ -456,14 +455,14 @@ We recommend using [Llama-Factory](https://github.com/XHToken/LlamaFactory) to f
 
 ## License
 
-The Spark-X2.5 model series is licensed under the [Apache 2.0 License](LICENSE).
+The Spark-X2.6 model series is licensed under the [Apache 2.0 License](LICENSE).
 
 ## Citation
 If you find our work helpful, feel free to give us a cite.
 
 ```bibtex
-@misc{sparkx2.5,
-    title  = {Spark-X2.5 4B&1.7B: Pushing the Limits of Agentic Capabilities in On-Device Models},
+@misc{sparkx2.6,
+    title  = {Spark-X2.6-4B: Advancing the Frontier of On-Device Agents for Real-World Tasks},
     author = {SparkLLM Team},
     year   = {2026}
 }
